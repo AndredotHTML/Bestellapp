@@ -1,9 +1,16 @@
+@font-face {
+    src: url(/assets/fonts/NotoSans-VariableFont_wdth\,wght.ttf);
+    font-family: "Noto Sans";
+    font-style: normal;
+}
+
 html {
     scroll-behavior: smooth;
 }
 
 body {
     margin: 0;
+    font-family: "Noto Sans";
 }
 
 .d_none {
