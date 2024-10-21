@@ -2,6 +2,10 @@ const restaurants = [
     {
       "name": "Pizzeria de Gracia",
       "rating": 4,
+      "logo": "Pizzeria_logo.jpg",
+      "mainpic": "Pizza.jpg",
+      "sidepic": "Bruschetta.jpg",
+      "dessertpic": "tiramisu.jpg",
       "products": {
         "main_courses": [
           {
@@ -29,34 +33,34 @@ const restaurants = [
           {
             "name": "Bruschetta",
             "price": 5.00,
-            "description": "Geröstetes Brot mit Tomaten, Knoblauch und Basilikum"
+            "ingredients": "Geröstetes Brot mit Tomaten, Knoblauch und Basilikum"
           },
           {
             "name": "Caprese-Salat",
             "price": 6.50,
-            "description": "Tomaten, Mozzarella, frisches Basilikum und Balsamico"
+            "ingredients": "Tomaten, Mozzarella, frisches Basilikum und Balsamico"
           },
           {
             "name": "Frittierte Zucchini",
             "price": 5.50,
-            "description": "Frittierte Zucchinischeiben mit Knoblauchdip"
+            "ingredients": "Frittierte Zucchinischeiben mit Knoblauchdip"
           },
           {
             "name": "Olivenplatte",
             "price": 4.50,
-            "description": "Verschiedene italienische Oliven"
+            "ingredients": "Verschiedene italienische Oliven"
           }
         ],
         "desserts": [
           {
             "name": "Tiramisu",
             "price": 4.50,
-            "description": "Kaffeetrüffel mit Mascarpone und Kakao"
+            "ingredients": "Kaffeetrüffel mit Mascarpone und Kakao"
           },
           {
             "name": "Panna Cotta",
             "price": 4.00,
-            "description": "Sahnige Nachspeise mit Fruchtsoße"
+            "ingredients": "Sahnige Nachspeise mit Fruchtsoße"
           }
         ]
       }
@@ -64,6 +68,10 @@ const restaurants = [
     {
       "name": "Toms Burgers",
       "rating": 4.5,
+      "logo": "Burger_logo.jpg",
+      "mainpic": "hamburger.jpg",
+      "sidepic": "Pommes.jpg",
+      "dessertpic": "Brownie.jpg",
       "products": {
         "main_courses": [
           {
@@ -91,34 +99,34 @@ const restaurants = [
           {
             "name": "Pommes Frites",
             "price": 3.50,
-            "description": "Klassische knusprige Pommes frites"
+            "ingredients": "Klassische knusprige Pommes frites"
           },
           {
             "name": "Onion Rings",
             "price": 4.00,
-            "description": "Frittierte Zwiebelringe mit Dip"
+            "ingredients": "Frittierte Zwiebelringe mit Dip"
           },
           {
             "name": "Coleslaw",
             "price": 3.00,
-            "description": "Frischer Krautsalat mit Dressing"
+            "ingredients": "Frischer Krautsalat mit Dressing"
           },
           {
             "name": "Chili Cheese Fries",
             "price": 5.50,
-            "description": "Pommes mit Chili und geschmolzenem Käse"
+            "ingredients": "Pommes mit Chili und geschmolzenem Käse"
           }
         ],
         "desserts": [
           {
             "name": "Milkshake",
             "price": 4.50,
-            "description": "Cremiger Milkshake in verschiedenen Geschmacksrichtungen"
+            "ingredients": "Cremiger Milkshake in verschiedenen Geschmacksrichtungen"
           },
           {
             "name": "Brownie",
             "price": 3.00,
-            "description": "Saftiger Schokoladenbrownie mit Nüssen"
+            "ingredients": "Saftiger Schokoladenbrownie mit Nüssen"
           }
         ]
       }
@@ -160,9 +168,9 @@ const restaurants = [
   function renderSidesTemplate(restaurantIndex) {
     let sidesHTML = " ";
   
-    for (let restaurantIndex = 0; restaurantIndex < restaurants[restaurantIndex].sides.length; restaurantIndex++) {
+    for (let sidesIndex = 0; sidesIndex < restaurants[restaurantIndex].products.sides.length; sidesIndex++) {
           
-        sidesHTML += getSidesTemplate(restaurantIndex);
+        sidesHTML += getSidesTemplate(restaurantIndex, sidesIndex);
           
     };
 
@@ -174,9 +182,9 @@ const restaurants = [
   function renderDessertsTemplate(restaurantIndex) {
     let dessertsHTML = " ";
   
-    for (let restaurantIndex = 0; restaurantIndex < restaurants[restaurantIndex].desserts.length; restaurantIndex++) {
+    for (let dessertsIndex = 0; dessertsIndex < restaurants[restaurantIndex].products.desserts.length; dessertsIndex++) {
           
-        dessertsHTML += getDessertTemplate(restaurantIndex);restaurantIndex
+        dessertsHTML += getDessertTemplate(restaurantIndex, dessertsIndex);
           
     };
 
@@ -185,3 +193,6 @@ const restaurants = [
   }
   
   
+  function toggleDnone() {
+    classList.toggle("d_none")
+  }

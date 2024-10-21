@@ -1,0 +1,43 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+}
+
+.d_none {
+    display: none;
+}
+
+h3 {
+    margin: 0;
+    font-size: 20px;
+}
+
+h4 {
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    filter: drop-shadow(2px 4px 6px black);
+}
+
+.margin {
+    margin: 8px;
+}
+
+.arrow_right {
+    border-top: 18px solid transparent;
+    border-bottom: 18px solid transparent;
+    border-left: 30px solid #FF8000; 
+  }
+  
+
+
+  
