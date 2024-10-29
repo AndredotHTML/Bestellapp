@@ -68,3 +68,56 @@
     border-width: 2px;
     width: 90%;
   }
+
+  .dessert_products {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px 0;
+    align-items: center;
+    padding-bottom: 80px;
+  }
+
+  .add_to_card{
+    display: flex;
+    justify-content: end;
+  }
+
+  .plus_img {
+    height: 32px;
+    width: auto;
+    padding: 4px;
+  }
+
+  .plus_img:hover {
+    height: 36px;
+    cursor: pointer;
+    padding: 2px;
+  }
+
+  #idk {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    position: fixed;
+    padding-top: 16px;
+  }
+
+  #openbasket {
+    width: 80px;
+    height: 80px;
+    background-color: #FF8000;
+    border-radius: 8px 0px 0px 8px;
+    border-color: rgba(128, 128, 128, 0.322);
+    border-style: solid;
+    border-width: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .basket_img {
+    width: 64px;
+    height: 64px;
+  }

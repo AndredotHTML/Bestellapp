@@ -1,4 +1,4 @@
-const restaurants = [
+let restaurants = [
     {
       "name": "Pizzeria de Gracia",
       "rating": 4,
@@ -133,6 +133,12 @@ const restaurants = [
     }
   ];
 
+
+let basket = []
+  
+
+
+
   function init() {
     renderRestaurantTemplate()
   }
@@ -193,6 +199,44 @@ const restaurants = [
   }
   
   
-  function toggleDnone() {
-    classList.toggle("d_none")
+  function toggleBasketDnone() {
+    document.getElementById("basket").classList.toggle("d_none")
+  }
+
+
+  function addToBasket(restaurantIndex, mainsIndex) {
+    basket.push(restaurants[restaurantIndex].products.main_courses[mainsIndex])
+    renderBasket()
+  }
+
+  function renderBasket() {
+    let contentRef = document.getElementById("basket");
+    contentRef.innerHTML = " ";
+  
+          
+        contentRef.innerHTML += getBasketTemplate();
+  }
+
+
+  function renderBasketContent() {
+    let contentHTML = " ";
+
+    for (let basketIndex = 0; basketIndex < basket.length; basketIndex++) {
+      contentHTML += getBasketContentTemplate(basketIndex);
+      
+    };
+
+    return contentHTML
+  }
+
+
+  function renderBasketSum() {
+    let sumHTML = "";
+
+    for (let basketIndex = 0; basketIndex < basket.length; basketIndex++) {
+        sumHTML = 0 + basket[basketIndex].price;
+      
+    }
+
+    return sumHTML
   }
