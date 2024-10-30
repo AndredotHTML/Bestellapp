@@ -200,7 +200,11 @@ let basket = []
   
   
   function toggleBasketDnone() {
+    if (basket.length > 0) {
     document.getElementById("basket").classList.toggle("d_none")
+    document.getElementById("openbasket").classList.toggle("basket_margin")
+    }
+    
   }
 
 
@@ -231,12 +235,22 @@ let basket = []
 
 
   function renderBasketSum() {
-    let sumHTML = "";
-
+    let sum = 0
+    let sumHTML = ""
+    
     for (let basketIndex = 0; basketIndex < basket.length; basketIndex++) {
-        sumHTML = 0 + basket[basketIndex].price;
-      
+      sum += basket[basketIndex].price;
     }
-
+    sum += 3
+    sumHTML += sum.toFixed(2) 
     return sumHTML
+  }
+
+  function removeFromBasket(basketIndex) {
+    basket.splice(basketIndex,1)
+    renderBasket()
+    if (basket.length == 0) {
+      document.getElementById("basket").classList.toggle("d_none")
+      document.getElementById("openbasket").classList.toggle("basket_margin")
+    }
   }

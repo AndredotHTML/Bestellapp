@@ -44,14 +44,14 @@ function getDessertTemplate(restaurantIndex, dessertsIndex) {
 
 
 function getBasketTemplate() {
-    return `<div class="basket_head"><h3>Warenkorb</h3></div>
-            ${renderBasketContent()}
-            <div class="sum"> <p> Gesamtsumme:${renderBasketSum()} € </p> </div>`
+    return `<div class="inner_basket"><div class="basket_head"><h3>Warenkorb</h3></div>
+            <div class="basket_content">${renderBasketContent()}</div>
+            <div class="sum"> <p>Lieferkosten: 3.00 € </p><p> Gesamtsumme: ${renderBasketSum()} € </p> </div></div>`
 }
 
 function getBasketContentTemplate(basketIndex) {
-    return `<div class="basket_content"><h4>${basket[basketIndex].name}</h4>
-            <p>${basket[basketIndex].price}</p></div>`
+    return `<div class="basket_content_divs"><div class="content_head"><h4>${basket[basketIndex].name}</h4><a href="#" onclick="removeFromBasket(${basketIndex})" class="close">X</a></div>
+            <p>${basket[basketIndex].price.toFixed(2)} €</p></div>`
 }
 
 

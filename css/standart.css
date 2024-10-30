@@ -14,7 +14,7 @@ body {
 }
 
 .d_none {
-    display: none;
+    display: none !important;
 }
 
 h2 {
@@ -55,8 +55,13 @@ a:hover {
     border-top: 18px solid transparent;
     border-bottom: 18px solid transparent;
     border-left: 30px solid #FF8000; 
-  }
-  
+}
 
+.close {
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+    margin-right: 16px;
+}
 
   
