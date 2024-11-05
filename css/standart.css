@@ -11,6 +11,12 @@ html {
 body {
     margin: 0;
     font-family: "Noto Sans";
+    min-height: 100vh;
+}
+
+.inner_body {
+    max-width: 1920px;
+    margin: auto
 }
 
 .d_none {
@@ -41,6 +47,7 @@ a {
 
 a:hover {
     filter: drop-shadow(2px 4px 6px black);
+    cursor: pointer;
 }
 
 .margin {
@@ -64,4 +71,14 @@ a:hover {
     margin-right: 16px;
 }
 
-  
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+@media (max-width: 500px) {
+    .arrow_right {
+      display: none;
+    }
+  }
