@@ -3,6 +3,7 @@ let restaurants = [
       "name": "Pizzeria de Gracia",
       "rating": 4,
       "logo": "Pizzeria_logo.jpg",
+      "restaurentLogo":"Pizzeria.jpg",
       "mainpic": "Pizza.jpg",
       "sidepic": "Bruschetta.jpg",
       "dessertpic": "tiramisu.jpg",
@@ -79,6 +80,7 @@ let restaurants = [
       "name": "Toms Burgers",
       "rating": 4.5,
       "logo": "Burger_logo.jpg",
+      "restaurentLogo":"toms_Burger.png",
       "mainpic": "hamburger.jpg",
       "sidepic": "Pommes.jpg",
       "dessertpic": "Brownie.jpg",
@@ -157,14 +159,11 @@ let restaurants = [
 let basket = []
   
 
-
-
   function init() {
     renderRestaurantTemplate()
   }
 
-
-
+  
   function renderRestaurantTemplate() {
     let contentRef = document.getElementById("restaurants_content");
     contentRef.innerHTML = " ";
@@ -229,12 +228,13 @@ let basket = []
 
 
   function addToBasket(restaurantIndex, courseIndex, course) {
-    if (basket.includes(restaurants[restaurantIndex].products.course[courseIndex])) {
+    if (basket.includes(restaurants[restaurantIndex].products[course][courseIndex])) {
       return
     } else {
-    basket.push(restaurants[restaurantIndex].products.course[courseIndex])
+    basket.push(restaurants[restaurantIndex].products[course][courseIndex])
     renderBasket() }
   }
+
 
   function renderBasket() {
     let contentRef = document.getElementById("basket");
@@ -269,6 +269,7 @@ let basket = []
     return sumHTML
   }
 
+
   function removeFromBasket(basketIndex) {
     basket.splice(basketIndex,1)
     renderBasket()
@@ -293,4 +294,20 @@ let basket = []
       removeFromBasket(basketIndex)
     }
   }
+
+
+  function placeOrder() {
+    basket.splice(0,basket.length)
+    renderBasket()
+    document.getElementById("basket").classList.toggle("d_none")
+    document.getElementById("openbasket").classList.toggle("basket_margin")
+    toggleOverlay()
+  }
+
+
+  function toggleOverlay(){
+    let refOverlay = document.getElementById('overlay');
+
+    refOverlay.classList.toggle('d_none')
+}
 

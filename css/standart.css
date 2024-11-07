@@ -50,6 +50,11 @@ a:hover {
     cursor: pointer;
 }
 
+button:hover {
+    filter: drop-shadow(2px 4px 6px black);
+    cursor: pointer;
+}
+
 .margin {
     margin: 8px;
 }
@@ -69,6 +74,18 @@ a:hover {
     font-weight: bold;
     color: black;
     margin-right: 16px;
+}
+
+.overlay {
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.288);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 input::-webkit-outer-spin-button,
