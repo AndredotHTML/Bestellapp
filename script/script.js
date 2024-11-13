@@ -271,6 +271,7 @@ let basket = []
 
 
   function removeFromBasket(basketIndex) {
+    basket[basketIndex].ammount = 1
     basket.splice(basketIndex,1)
     renderBasket()
     if (basket.length == 0) {
